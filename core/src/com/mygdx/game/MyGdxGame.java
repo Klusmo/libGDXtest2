@@ -36,21 +36,14 @@ public class MyGdxGame extends ApplicationAdapter {
 			float scale = controls.getZoom();
 			Vector2 drag = controls.getdPoint();
             s[i].setScale(scale);
-			//s[i].setPosition((s[i].getX()*scale)-drag.x, (s[i].getY()*scale)-drag.y);
-
 			if(i<5)
 				s[i].setPosition(0-drag.x ,i*s[0].getHeight()*scale + drag.y);
 			else
 				s[i].setPosition((s[0].getWidth()*3/4f)*scale -drag.x,((i-5)*s[0].getHeight()+s[0].getHeight()/2)*scale +drag.y);
 		}
-
-
 		batch.begin();
 		for (int i = 0; i < 10; i++)
 			s[i].draw(batch);
-		//batch.draw(img, 0, 0);
-		//batch.draw(img, img.getWidth()*3/2f,0);
-		//batch.draw(img, img.getWidth()3/2f,(img.getHeight()*3)/4f);
 		batch.end();
 	}
 
